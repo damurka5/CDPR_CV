@@ -1,8 +1,8 @@
 import os
+import time
 from simulation.core import CDPRSimulation
 from simulation.viewer import CDPRViewer
 from simulation.controller import CDPRController
-from utils.cable_calculations import compute_cable_lengths
 
 def main():
     # Initialize simulation
@@ -10,6 +10,9 @@ def main():
     simulation = CDPRSimulation(model_path)
     viewer = CDPRViewer(simulation.model)
     controller = CDPRController(simulation.model, simulation.data)
+    
+    # Reset to initial state
+    simulation.reset()
     
     # Main loop
     while not viewer.should_close() and simulation.data.time < simulation.simend:
@@ -21,6 +24,9 @@ def main():
         
         # Update viewer
         viewer.update(simulation.model, simulation.data)
+        
+        # Control simulation speed
+        time.sleep(1.0/60.0)
     
     viewer.close()
 
