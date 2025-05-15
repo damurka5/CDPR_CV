@@ -19,7 +19,7 @@ parameters = aruco.DetectorParameters()
 detector = aruco.ArucoDetector(dictionary, parameters)
 
 # Initialize video capture
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("cv/videos/webcam_20250508_143816.mp4")
 if not cap.isOpened():
     print("Error: Could not open camera")
     exit()
