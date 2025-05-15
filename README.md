@@ -38,7 +38,7 @@ The vision system performs three main functions:
 
 | Model | Performance | Accuracy | Notes |
 |-------|-------------|----------|-------|
-| **MiDaS** (DPT_Hybrid) | ⚠️ Slow (~2 FPS) | ✅ Good | Works well but computationally expensive |
+| **MiDaS** (DPT_Hybrid) | ⚠️ Slow (<1 FPS) | ✅ Good | Works well but computationally expensive |
 | **AdaBins** | ❌ Didn't work | N/A | Failed to produce usable depth maps |
 | **ZoeDepth** | ⚠️ Medium speed | ✅ Very Good | Not implemented but promising alternative |
 
